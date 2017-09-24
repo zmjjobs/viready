@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.mapper.TestMapper">
+  <select id="select_class_1" resultType="com.atguigu.bean.T_MALL_CLASS_1">
+  	select * from T_MALL_CLASS_1
+  </select>
+  <select id="select_class_2_by_flbh1" resultType="com.atguigu.bean.T_MALL_CLASS_2">
+  	select * from T_MALL_CLASS_2 where flbh1 = #{flbh1}
+  </select>
+  <select id="select_trade_mark_by_flbh1" resultType="com.atguigu.bean.T_MALL_TRADE_MARK">
+  	 select tm.id ,tm.ppmch  from t_mall_tm_class tc left join t_mall_trade_mark tm  on tm.id = tc.pp_id where flbh1 = #{flbh1}
+  </select>
+  <select id="login" resultType="com.atguigu.bean.T_MALL_USER_ACCOUNT">
+  	select * from T_MALL_USER_ACCOUNT where yh_mch = #{yh_mch} and yh_mm = #{yh_mm}
+  </select>
+</mapper>
